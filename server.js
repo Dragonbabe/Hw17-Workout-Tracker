@@ -8,7 +8,7 @@ const mongoose = require(`mongoose`);
 
 const PORT = process.env.PORT || 8080;
 
-const db = require(`./models/Exercise`);
+const db = require(`./models`);
 
 const app = express();
 
@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/populate`, {
   useFindAndModify: false
 });
 
-db.Workout.create({ name: `Workouts`})
+db.Workout.create({ name: `Workout`})
 .then(dbWorkout => {
     console.log(dbWorkout);
 })
