@@ -1,26 +1,41 @@
 'use strict';
-
+//USER SELECTS TYPE OF WORKOUT
 const workoutTypeSelect = document.querySelector(`#type`);
+//IS IT CARDIO?
 const cardioForm = document.querySelector(`.cardio-form`);
+//IS IT RESISTANCE?
 const resistanceForm = document.querySelector(`.resistance-form`);
+//NAME OF CARDIO IF CARDIO
 const cardioNameInput = document.querySelector(`#cardio-name`);
+//NAME OF EXERCISE TYPE
 const nameInput = document.querySelector(`#name`);
+//IF WEIGHT
 const weightInput = document.querySelector(`#weight`);
+//HOW MANY SETS
 const setsInput = document.querySelector(`#sets`);
+//HOW MANY REPS
 const repsInput = document.querySelector(`#reps`);
+//FOR HOW LONG
 const durationInput = document.querySelector(`#duration`);
+//HOW LONG DID THEY RESIST FOR
 const resistanceDurationInput = document.querySelector(`#resistance-duration`);
+//HOW FAR DID THEY GO
 const distanceInput = document.querySelector(`#distance`);
+//DONE!
 const completeButton = document.querySelector(`button.complete`);
+//ADD IT IN
 const addButton = document.querySelector(`button.add-another`);
+//IDK WHAT TOAST HAS TO DO WITH ANYTHING
 const toast = document.querySelector(`#toast`);
-
+//DEFINE WORKOUT TYPE AS A VARIABLE THAT CAN CHANGE
 let workoutType = null;
+//IDK WHAT THIS MEANS
 let shouldNavigateAway = false;
-
+//INITIALIZE EXERCISE SEQUENCE
 async function initExercise() {
+  //DEFINE WORKOUT AS A VARIABLE THAT CAN CHANGE
   let workout;
-
+//CREATE A WORKOUT
   if (location.search.split(`=`)[1] === undefined) {
     workout = await API.createWorkout();
     console.log(workout);
@@ -30,9 +45,9 @@ async function initExercise() {
   }
 
 }
-
+//CALLBACK FUNCTION
 initExercise();
-
+//CHANGE WORKOUT TYPE FUNCTION
 function handleWorkoutTypeChange(event) {
   workoutType = event.target.value;
 
