@@ -25,33 +25,20 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/populate`, {
   useFindAndModify: false
 });
 
-db.Workout.create({ name: `Workout`})
-.then(dbWorkout => {
-    console.log(dbWorkout);
+app.get(`./populated`, (req, res) => {
+    db.Workout.find({})
+    .populate(`exercise`)
+    .then(dbExercise => {
+        res.json(dbExercise);
+    })
+    .catch(err => {
+        res.json(err);
+    })
 })
-.catch(({message}) => {
-    console.log(message)
-});
-
-app.post(`/submit`, ({body}, res) => {
-    db.Exercise.create(body)
-    .then(({ _id }) => 
-        db.Workout.findOneAndUpdate(
-            {},
-            { $push: { exercise: _id} },
-            {
-                new: true
-            })
-        ) 
-        .then(dbWorkout => {
-            res.json(dbWorkout);
-        })
-        .catch(err => {
-            res.json(err);
-        });
-});
+app.use(require('./routes/html.js'));
+app.use(require('./routes/workout.js'));
 
 app.listen(PORT, () => {
-    console.log(`App running on http://localhost:${PORT}`);
+    console.log(`App listening on http://localhost:${PORT}`);
   });
   
