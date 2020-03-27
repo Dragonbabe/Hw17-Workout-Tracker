@@ -35,8 +35,8 @@ app.get(`./populated`, (req, res) => {
         res.json(err);
     })
 })
-app.use(require('./routes/html.js'));
-app.use(require('./routes/workout.js'));
+require('./routes/html.js')(app);
+require('./routes/workout.js')(app);
 
 app.listen(PORT, () => {
     console.log(`App listening on http://localhost:${PORT}`);
