@@ -23,4 +23,9 @@ app.get(`/api/workouts`, (req, res) => {
         .then(dbExercise => res.json(dbExercise))
         .catch(err => res.status(400).json(err));
     });
+    app.get(`/api/workouts/range`, (req, res) => {
+    Workout.find({})
+    .then(dbExercise => res.json(dbExercise))
+    .catch(err => res.status(404).json(err));
+    })
 };
