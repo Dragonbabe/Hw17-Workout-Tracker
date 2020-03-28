@@ -11,7 +11,7 @@ Suppose you have decided to start working out and you want to track your progres
 - [Author](#Author)
 ## General Info
 
-This app utilizes the technologies of nodemon, mongDB and mongoose to deliver to you a full-stack web application utilizing CRUD and to be able to manipulate data in the database.
+This app utilizes the technologies of nodemon, mongDB and mongoose to deliver to you a full-stack web application utilizing CRUD to be able to manipulate data in the database.
 Check it out on GitHub! https://github.com/Dragonbabe/Hw17-Workout-Tracker
 ## Technologies
 
