@@ -21,6 +21,20 @@ const WorkoutSchema = new Schema({
           distance: Number
         }
       ],
+    },
+    { 
+      toJSON: {
+      virtuals: true
+    }
+
+    }
+    );
+    WorkoutSchema.virtual('totalDuration').get(function() {
+      
+       let grandTotal = this.exercises.reduce((total, currentValue) => total + currentValue.duration, 0);
+       console.log(grandTotal);
+       return grandTotal
+
     });
 
   

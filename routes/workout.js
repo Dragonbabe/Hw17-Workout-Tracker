@@ -12,7 +12,7 @@ app.post(`/api/workouts`, ({body}, res) => {
     .catch(err => res.status(400).json(err));
     });
 app.put(`/api/workouts/:id`, ({body, params}, res) => {
-    console.log(body);
+    // console.log(body);
 Workout.findOneAndUpdate({_id: params.id}, { $push: { exercises: body } })
 .then(dbExercise => res.json(dbExercise))
 .catch(err => {console.log(err)
@@ -25,7 +25,8 @@ app.get(`/api/workouts`, (req, res) => {
         .then(dbExercise => {
             console.log(dbExercise);
             return res.json(dbExercise)})
-        .catch(err => res.status(400).json(err));
+        .catch(err => {console.log(err)
+            res.status(400).json(err)});
     });
     app.get(`/api/workouts/range`, (req, res) => {
     Workout.find({})
