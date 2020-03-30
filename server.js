@@ -41,4 +41,3 @@ require('./routes/workout.js')(app);
 app.listen(PORT, () => {
     console.log(`App listening on http://localhost:${PORT}`);
   });
-  
