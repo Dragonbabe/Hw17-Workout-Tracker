@@ -32,11 +32,8 @@ Project is created with :
 ## Screenshots
 ![image](https://image.shutterstock.com/image-photo/woman-after-gym-workout-260nw-551042596.jpg)
 
+
 I work out! :musical_note: 
-
-
-
-
 
 
 ## Author
