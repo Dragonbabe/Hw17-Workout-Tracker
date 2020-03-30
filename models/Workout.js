@@ -9,7 +9,7 @@ const WorkoutSchema = new Schema({
         type: Date,
         default: Date.now()
     },
-  
+   
     exercises: [
         {
           type: Object,
@@ -20,7 +20,9 @@ const WorkoutSchema = new Schema({
           duration: Number,
           distance: Number
         }
-      ]
+      ],
     });
 
+  
+    
 module.exports = mongoose.model(`Workout`, WorkoutSchema);

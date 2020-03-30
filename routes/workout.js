@@ -5,6 +5,8 @@ module.exports = app => {
 const Workout = require(`../models/Workout`);
 
 app.post(`/api/workouts`, ({body}, res) => {
+    // const workout = new Workout(body);
+    // workout.getTotalDuration();
     Workout.create(body)
     .then(dbExercise => res.json(dbExercise))
     .catch(err => res.status(400).json(err));
