@@ -23,9 +23,7 @@ Project is created with :
 - [CSS](https://www.w3schools.com/css/)
 - [Heroku](https://devcenter.heroku.com/articles/deploying-nodejs)
 ## Screenshots
-![image](main.page.png)
-
-![image](add.to.last.workout.png)
+![image](https://image.shutterstock.com/image-photo/woman-after-gym-workout-260nw-551042596.jpg)
 
 I work out! :musical_note: 
 
